@@ -1,9 +1,10 @@
 import React from "react";
+import { holdings } from "../data/data";
 
 const Holdings = () => {
   return (
     <>
-      <h3 className="title">Holdings (13)</h3>
+      <h3 className="title">Holdings ({holdings.length})</h3>
 
       <div className="order-table">
         <table>
