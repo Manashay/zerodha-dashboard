@@ -9,7 +9,7 @@ const Summary = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try{
-        const response  = await axios.get("http://localhost:3002/user/profile", {
+        const response  = await axios.get("https://zerodha-clone-backend-wzd3.onrender.com/user/profile", {
           withCredentials: true
         });
         setUsername(response.data.username);

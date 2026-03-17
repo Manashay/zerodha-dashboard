@@ -13,7 +13,7 @@ const SellActionWindow = ({ uid }) => {
 
   // Use useEffect for data fetching
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
+    axios.get("https://zerodha-clone-backend-wzd3.onrender.com/allHoldings").then((res) => {
       setHoldings(res.data);
       // Initialize price based on the current stock's market price
       const currentStock = res.data.find((s) => s.name === uid);
@@ -24,7 +24,7 @@ const SellActionWindow = ({ uid }) => {
   }, [uid]);
 
   const handleSellClick = (id, currentStock) => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://zerodha-clone-backend-wzd3.onrender.com/newOrder", {
       name: uid,
       qty: Number(stockQuantity),
       price: Number(stockPrice),
@@ -33,7 +33,7 @@ const SellActionWindow = ({ uid }) => {
 
     const updatedQty = currentStock - Number(stockQuantity);
     if(updatedQty > 0){
-        axios.put(`http://localhost:3002/upadateHolding/${id}`, {
+        axios.put(`https://zerodha-clone-backend-wzd3.onrender.com/upadateHolding/${id}`, {
           qty: updatedQty,
         }).then(() => {
           closeSellWindow();
