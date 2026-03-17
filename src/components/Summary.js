@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'axios';
+
 
 const Summary = () => {
+
+  const [username, setUsername] = useState("Loading..");
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try{
+        const response  = await axios.get("http://localhost:3002/user/profile", {
+          withCredentials: true
+        });
+        setUsername(response.data.username);
+      }
+      catch(err){
+        console.error("Failed to fetch user", err);
+        setUsername("Guest");
+      }
+    };
+    fetchUserData();
+  }, []);
+
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi, {username}</h6>
         <hr className="divider" />
       </div>
 

@@ -633,7 +633,7 @@ hr {
 }
 
 .watchlist-container {
-  flex-basis: 32%;
+  flex-basis: 34%;
   height: 100%;
   box-sizing: border-box;
   box-shadow: 0px 0px 4px 1px rgb(236, 235, 235);
@@ -655,7 +655,7 @@ hr {
   padding: 15px 20px;
   font-size: 0.9rem;
   font-weight: 400;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   border-bottom: 0.8px solid rgb(235, 234, 234);
 }
 
@@ -673,8 +673,8 @@ hr {
 }
 
 .list li {
-  border-bottom: 0.8px solid rgb(235, 234, 234);
-  padding: 12px 10px 12px 14px;
+  border-bottom: 2px solid rgb(235, 234, 234);
+  padding: 10px 10px 10px 14px;
   position: relative;
 }
 
@@ -682,7 +682,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 0.8rem;
   position: relative;
 }
