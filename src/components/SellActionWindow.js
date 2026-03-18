@@ -40,6 +40,13 @@ const SellActionWindow = ({ uid }) => {
           window.location.reload();
         });
     }
+    else if (updatedQty === 0) {
+      axios.delete(`https://zerodha-clone-backend-wzd3.onrender.com/deleteHolding/${id}`)
+        .then(() => {
+          closeSellWindow();
+          window.location.reload();
+        });
+    }
   };
 
   const handleCancelClick = () => {
